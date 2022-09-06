@@ -15,13 +15,12 @@
     <nav class="navbar bg-dark navbar-dark fixed-top">
         <!-- Brand/logo -->
         <a class="navbar-brand" style="margin-left:50px;margin-right:100px;" href="#">
-            <!-- <img src="../static/img/logo.png" alt="Logo" style="height:45px;"> -->
-            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Logo" style="height:45px;">
+            <img src="img/logo.png" alt="Logo" style="height:45px;">
         </a>
         
         <!-- Links -->
         <nav class="nav nav-pills">
-            <a class="nav-link" href="/"><i class="fa-solid fa-home"></i> Home</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-home"></i> Home</a>
             <a class="nav-link disabled"></a>
             <a class="nav-link active" href="#"><i class="fa-solid fa-bolt"></i> Menu</a>
             <a class="nav-link disabled"></a>
@@ -41,15 +40,7 @@
                         <tr class="d-flex">
                             <td class="col-2">언어 선택</td>
                             <td class="col-8">
-                                {% for option in options %}
-                                    <div class="form-check-inline">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="lang" value="{{option.val}}"
-                                                {% if loop.first %}checked{% endif %}> {{option.disp}}
-                                        </label>
-                                    </div>
-                                {% endfor %}
-                                <!-- <div class="form-check-inline">
+                                <div class="form-check-inline">
                                     <label class="form-check-label">
                                         <input type="radio" class="form-check-input" name="lang" value="en" checked> 영어
                                     </label>
@@ -73,7 +64,7 @@
                                     <label class="form-check-label">
                                         <input type="radio" class="form-check-input" name="lang" value="es"> 스페인어
                                     </label>
-                                </div> -->
+                                </div>
                             </td>
                             <td class="col-2"></td>
                         </tr>

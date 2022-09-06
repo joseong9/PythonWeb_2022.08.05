@@ -10,35 +10,35 @@
 <body>
 
 <div class="container mt-3">
-  <h2>Striped Rows</h2>
-  <p>The .table-striped class adds zebra-stripes to a table:</p>            
-  <table class="table table-borderless table-primary">
+  <h2>Basic Table</h2>
+  <p>The .table class adds basic styling (light padding and horizontal dividers) to a table:</p>            
+  <table class="table table-hover">
     <thead>
-        <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John</td>
-            <td>Doe</td>
-            <td>john@example.com</td>
-          </tr>
-          <tr>
-            <td>Mary</td>
-            <td>Moe</td>
-            <td>mary@example.com</td>
-          </tr>
-          <tr>
-            <td>July</td>
-            <td>Dooley</td>
-            <td>july@example.com</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    </body>
-    </html>
+      <tr class="d-flex">
+        <th class="col-3">Firstname</th>
+        <th class="col-3">Lastname</th>
+        <th class="col-6">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="d-flex">
+        <td class="col-3">John</td>
+        <td class="col-3">Doe</td>
+        <td class="col-6">john@example.com</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-4">Mary</td>
+        <td class="col-4">Moe</td>
+        <td class="col-4">mary@example.com</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col-4">July</td>
+        <td class="col-4">Dooley</td>
+        <td class="col-4">july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

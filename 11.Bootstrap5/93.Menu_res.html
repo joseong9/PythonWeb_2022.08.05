@@ -15,13 +15,12 @@
     <nav class="navbar bg-dark navbar-dark fixed-top">
         <!-- Brand/logo -->
         <a class="navbar-brand" style="margin-left:50px;margin-right:100px;" href="#">
-            <!-- <img src="../static/img/logo.png" alt="Logo" style="height:45px;"> -->
-            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Logo" style="height:45px;">
+            <img src="img/logo.png" alt="Logo" style="height:45px;">
         </a>
         
         <!-- Links -->
         <nav class="nav nav-pills">
-            <a class="nav-link" href="/"><i class="fa-solid fa-home"></i> Home</a>
+            <a class="nav-link" href="#"><i class="fa-solid fa-home"></i> Home</a>
             <a class="nav-link disabled"></a>
             <a class="nav-link active" href="#"><i class="fa-solid fa-bolt"></i> Menu</a>
             <a class="nav-link disabled"></a>
@@ -40,16 +39,14 @@
                     <tr class="d-flex">
                         <td class="col-2">이미지</td>
                         <td class="col-8">
-                            <!-- <img src="../static/img/독수리.jpg" class="d-block w-100" alt="입력한 사진"> -->
-                            <!-- <img src="{{url_for('static', filename='img/독수리.jpg')}}" class="d-block w-100" alt="입력한 사진"> -->     
-                            <img src="{{url_for('static', filename='upload/'+fname)}}" class="d-block w-100" alt="입력한 사진">                         
+                            <img src="img/독수리.jpg" class="d-block w-100" alt="입력한 사진">                              
                         </td>
                         <td class="col-2"></td>
                     </tr class="d-flex">
                     <tr class="d-flex">
                         <td class="col-2 mt-1 mb-1">레이블</td>
                         <td class="col-8 mt-1 mb-1" style="background-color: beige;">
-                            <strong>{{result}}</strong>                             
+                            <strong>bald_eagle (73.63%)</strong>                             
                         </td>
                         <td class="col-2"></td>
                     </tr class="d-flex">

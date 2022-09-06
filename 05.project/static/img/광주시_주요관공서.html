@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f2da6a0c3caa6760fe86cf12d7d1e6ff {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_f2da6a0c3caa6760fe86cf12d7d1e6ff" ></div>
+        
+</body>
+<script>    
+    
+            var map_f2da6a0c3caa6760fe86cf12d7d1e6ff = L.map(
+                "map_f2da6a0c3caa6760fe86cf12d7d1e6ff",
+                {
+                    center: [35.159841, 126.851784],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1342a7b202e9b3a74723439b6b1e27af = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_f2da6a0c3caa6760fe86cf12d7d1e6ff);
+        
+    
+            var marker_e8ab527be2707a0d390836d6339b90a3 = L.marker(
+                [35.159841, 126.851784],
+                {}
+            ).addTo(map_f2da6a0c3caa6760fe86cf12d7d1e6ff);
+        
+    
+        var popup_1253cab61ab080e634106db84aa37aa3 = L.popup({"maxWidth": 200});
+
+        
+            var html_201fc4eba6e44bf8a22e4c976360e4c9 = $(`<div id="html_201fc4eba6e44bf8a22e4c976360e4c9" style="width: 100.0%; height: 100.0%;">광주광역시 서구 내방로 111</div>`)[0];
+            popup_1253cab61ab080e634106db84aa37aa3.setContent(html_201fc4eba6e44bf8a22e4c976360e4c9);
+        
+
+        marker_e8ab527be2707a0d390836d6339b90a3.bindPopup(popup_1253cab61ab080e634106db84aa37aa3)
+        ;
+
+        
+    
+    
+            marker_e8ab527be2707a0d390836d6339b90a3.bindTooltip(
+                `<div>
+                     광주광역시청
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_df908047c24cd8cc16a26b5f63725001 = L.marker(
+                [35.146107, 126.923315],
+                {}
+            ).addTo(map_f2da6a0c3caa6760fe86cf12d7d1e6ff);
+        
+    
+        var popup_83519724c41dbbafe9388eb4a4ce32f0 = L.popup({"maxWidth": 200});
+
+        
+            var html_5c210c7854e69245725ae4136ce02511 = $(`<div id="html_5c210c7854e69245725ae4136ce02511" style="width: 100.0%; height: 100.0%;">광주광역시 동구 서남로 1</div>`)[0];
+            popup_83519724c41dbbafe9388eb4a4ce32f0.setContent(html_5c210c7854e69245725ae4136ce02511);
+        
+
+        marker_df908047c24cd8cc16a26b5f63725001.bindPopup(popup_83519724c41dbbafe9388eb4a4ce32f0)
+        ;
+
+        
+    
+    
+            marker_df908047c24cd8cc16a26b5f63725001.bindTooltip(
+                `<div>
+                     광주 동구청
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e99285ef65e927e6c3d6fbb9176dc30c = L.marker(
+                [35.152089, 126.889858],
+                {}
+            ).addTo(map_f2da6a0c3caa6760fe86cf12d7d1e6ff);
+        
+    
+        var popup_c1163e6fafa2a1f151b90b2d3c11c6ed = L.popup({"maxWidth": 200});
+
+        
+            var html_8ed1b073f32eab2c3d33d0ce968faf7a = $(`<div id="html_8ed1b073f32eab2c3d33d0ce968faf7a" style="width: 100.0%; height: 100.0%;">광주광역시 서구 농성동 경열로 33</div>`)[0];
+            popup_c1163e6fafa2a1f151b90b2d3c11c6ed.setContent(html_8ed1b073f32eab2c3d33d0ce968faf7a);
+        
+
+        marker_e99285ef65e927e6c3d6fbb9176dc30c.bindPopup(popup_c1163e6fafa2a1f151b90b2d3c11c6ed)
+        ;
+
+        
+    
+    
+            marker_e99285ef65e927e6c3d6fbb9176dc30c.bindTooltip(
+                `<div>
+                     광주 서구청
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6509cb0a9ce6addcc1e253eca58bdbb6 = L.marker(
+                [35.1741, 126.912157],
+                {}
+            ).addTo(map_f2da6a0c3caa6760fe86cf12d7d1e6ff);
+        
+    
+        var popup_cb0c41cf158fece1950c9d85884b379f = L.popup({"maxWidth": 200});
+
+        
+            var html_162e8fa482536b78b6139dc7197b87a1 = $(`<div id="html_162e8fa482536b78b6139dc7197b87a1" style="width: 100.0%; height: 100.0%;">광주광역시 북구 우치로 77</div>`)[0];
+            popup_cb0c41cf158fece1950c9d85884b379f.setContent(html_162e8fa482536b78b6139dc7197b87a1);
+        
+
+        marker_6509cb0a9ce6addcc1e253eca58bdbb6.bindPopup(popup_cb0c41cf158fece1950c9d85884b379f)
+        ;
+
+        
+    
+    
+            marker_6509cb0a9ce6addcc1e253eca58bdbb6.bindTooltip(
+                `<div>
+                     광주 북구청
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_338e61de4ac47a71e59a4c0f2faa375d = L.marker(
+                [35.132901, 126.902573],
+                {}
+            ).addTo(map_f2da6a0c3caa6760fe86cf12d7d1e6ff);
+        
+    
+        var popup_282d088e1f6a0717b035d7b80106e0af = L.popup({"maxWidth": 200});
+
+        
+            var html_2929f42c60e77fcb4a22667dcf9b0fa9 = $(`<div id="html_2929f42c60e77fcb4a22667dcf9b0fa9" style="width: 100.0%; height: 100.0%;">광주광역시 남구 봉선로 1</div>`)[0];
+            popup_282d088e1f6a0717b035d7b80106e0af.setContent(html_2929f42c60e77fcb4a22667dcf9b0fa9);
+        
+
+        marker_338e61de4ac47a71e59a4c0f2faa375d.bindPopup(popup_282d088e1f6a0717b035d7b80106e0af)
+        ;
+
+        
+    
+    
+            marker_338e61de4ac47a71e59a4c0f2faa375d.bindTooltip(
+                `<div>
+                     광주 남구청
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5c996a01e8c6499a8e4fd7a189d0c4f9 = L.marker(
+                [35.159552, 126.793807],
+                {}
+            ).addTo(map_f2da6a0c3caa6760fe86cf12d7d1e6ff);
+        
+    
+        var popup_242ce9fc7dc810bc55f84090ed970b25 = L.popup({"maxWidth": 200});
+
+        
+            var html_66fc31133f50a98fe8007ce06dc9e864 = $(`<div id="html_66fc31133f50a98fe8007ce06dc9e864" style="width: 100.0%; height: 100.0%;">광주광역시 광산구 광산로29번길 15</div>`)[0];
+            popup_242ce9fc7dc810bc55f84090ed970b25.setContent(html_66fc31133f50a98fe8007ce06dc9e864);
+        
+
+        marker_5c996a01e8c6499a8e4fd7a189d0c4f9.bindPopup(popup_242ce9fc7dc810bc55f84090ed970b25)
+        ;
+
+        
+    
+    
+            marker_5c996a01e8c6499a8e4fd7a189d0c4f9.bindTooltip(
+                `<div>
+                     광주 광산구청
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
