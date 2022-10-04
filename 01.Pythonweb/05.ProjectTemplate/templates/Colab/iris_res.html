@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}아이리스 분류{% endblock %}
+{% block additional_head %}
+    <style>
+        td { text-align: center; }
+    </style>
+{% endblock %}
+{% block subtitle %}
+    <strong>아이리스(결과 화면)</strong>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <table class="table">
+            <tr>
+                <td>입력 데이터</td>
+                <td>
+                    {{test_data}}                      
+                </td>
+            </tr>
+            <tr>
+                <td class="mt-1 mb-1">레이블</td>
+                <td class="mt-1 mb-1">
+                    {{label}}                             
+                </td>
+            </tr>
+            <tr>
+                <td class="mt-1 mb-1">예측값</td>
+                <td class="mt-1 mb-1" style="background-color: beige;">
+                    <strong>{{result}}</strong>                             
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="btn btn-primary" onclick="location.href='/iris'">재실행</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-3"></div>
+</div>
+{% endblock %}

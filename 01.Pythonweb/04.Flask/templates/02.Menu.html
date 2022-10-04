@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>입력 화면</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        td { text-align: center; }
+    </style>
+</head>
+<body>
+    <nav class="navbar bg-dark navbar-dark fixed-top">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" style="margin-left:50px;margin-right:100px;" href="#">
+            <!-- <img src="../static/img/logo.png" alt="Logo" style="height:45px;"> -->
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Logo" style="height:45px;">
+        </a>
+        
+        <!-- Links -->
+        <nav class="nav nav-pills">
+            <a class="nav-link" href="/"><i class="fa-solid fa-home"></i> Home</a>
+            <a class="nav-link disabled"></a>
+            <a class="nav-link active" href="#"><i class="fa-solid fa-bolt"></i> Menu</a>
+            <a class="nav-link disabled"></a>
+            <a class="nav-link disabled" style="margin-right:50px;">
+                <strong>리뷰 분석을 통한 호텔 카테고리 재분류</strong>
+            </a>
+        </nav>
+    </nav>
+    <div class="container" style="margin-top:88px;">
+        <div class="row mb-5">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <h3><strong>메뉴(입력 화면)</strong></h3>
+                <hr>
+                <form action="/menu" method="POST" enctype="multipart/form-data">
+                    <table class="table table-borderless">
+                        <tr class="d-flex">
+                            <td class="col-2">언어 선택</td>
+                            <td class="col-8">
+                                {% for option in options %}
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="lang" value="{{option.val}}"
+                                                {% if loop.first %}checked{% endif %}> {{option.disp}}
+                                        </label>
+                                    </div>
+                                {% endfor %}
+                                <!-- <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="lang" value="en" checked> 영어
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="lang" value="jp"> 일어
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="lang" value="cn"> 중국어
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="lang" value="fr"> 프랑스어
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="lang" value="es"> 스페인어
+                                    </label>
+                                </div> -->
+                            </td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr class="d-flex">
+                            <td class="col-2 mt-2">텍스트</td>
+                            <td class="col-8">
+                                <input class="form-control" type="text" id="index" name="index">
+                            </td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr class="d-flex">
+                            <td class="col-2 mt-2">이미지 파일</td>
+                            <td class="col-8">
+                                <input class="form-control" type="file" id="image" name="image">
+                            </td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr class="d-flex">
+                            <td class="col-2 mt-2">노래 가사</td>
+                            <td class="col-8" style="text-align: left;">
+                                <textarea cols="80" rows="5" id="lyrics" name="lyrics"></textarea>
+                            </td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr class="d-flex">
+                            <td class="col-2"></td>
+                            <td class="col-8 mt-2">
+                                <button type="submit" class="btn btn-primary mr-2">실행</button>
+                                <button type="reset" class="btn btn-secondary">취소</button>
+                            </td>
+                            <td class="col-2"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center fixed-bottom">
+        <span class="navbar-text">
+            Copyright &copy; 2022 프로젝트8조(마리아, 제임스). All rights reserved.
+        </span>
+    </nav>
+</body>
+</html>

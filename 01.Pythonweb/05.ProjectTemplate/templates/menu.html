@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}입력 화면{% endblock %}
+{% block additional_head %}
+    <style>
+        td { text-align: center; }
+    </style>
+{% endblock %}
+{% block subtitle %}
+    <strong>메뉴(입력 화면)</strong>
+{% endblock %}
+{% block content %}
+    <form action="/menu" method="POST" enctype="multipart/form-data">
+        <table class="table table-borderless">
+            <tr class="d-flex">
+                <td class="col-2">언어 선택</td>
+                <td class="col-8">
+                    {% for option in options %}
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="lang" value="{{option.val}}"
+                                    {% if loop.first %}checked{% endif %}> {{option.disp}}
+                            </label>
+                        </div>
+                    {% endfor %}
+                </td>
+                <td class="col-2"></td>
+            </tr>
+            <tr class="d-flex">
+                <td class="col-2 mt-2">텍스트</td>
+                <td class="col-8">
+                    <input class="form-control" type="text" id="index" name="index">
+                </td>
+                <td class="col-2"></td>
+            </tr>
+            <tr class="d-flex">
+                <td class="col-2 mt-2">이미지 파일</td>
+                <td class="col-8">
+                    <input class="form-control" type="file" id="image" name="image">
+                </td>
+                <td class="col-2"></td>
+            </tr>
+            <tr class="d-flex">
+                <td class="col-2 mt-2">노래 가사</td>
+                <td class="col-8" style="text-align: left;">
+                    <textarea cols="80" rows="5" id="lyrics" name="lyrics"></textarea>
+                </td>
+                <td class="col-2"></td>
+            </tr>
+            <tr class="d-flex">
+                <td class="col-2"></td>
+                <td class="col-8 mt-2">
+                    <button type="submit" class="btn btn-primary mr-2">실행</button>
+                    <button type="reset" class="btn btn-secondary">취소</button>
+                </td>
+                <td class="col-2"></td>
+            </tr>
+        </table>
+    </form>
+{% endblock %}

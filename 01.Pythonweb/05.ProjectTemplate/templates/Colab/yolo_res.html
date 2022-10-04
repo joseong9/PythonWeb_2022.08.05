@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Yolo v5{% endblock %}
+{% block additional_head %}
+    <style>
+        td { text-align: center; }
+    </style>
+{% endblock %}
+{% block subtitle %}
+    <strong>객체 검출 결과(Yolo v5)</strong>
+{% endblock %}
+{% block content %}
+    <table class="table table-borderless">
+        <tr class="d-flex">
+            <td class="col-2">이미지</td>
+            <td class="col-8">
+                <img src="{{url_for('static', filename='upload/yolo_img.'+fext, q=mtime)}}" 
+                     class="d-block w-100" alt="입력한 사진">                         
+            </td>
+            <td class="col-2"></td>
+        </tr class="d-flex">
+        <tr class="d-flex">
+            <td class="col-2"></td>
+            <td class="col-8">
+                <button class="btn btn-primary" onclick="location.href='/yolo'">재실행</button>
+            </td>
+            <td class="col-2"></td>
+        </tr>
+    </table>
+{% endblock %}

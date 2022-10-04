@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block additional_head %}
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block subtitle %}
+    <strong>전체(Holistic)</strong>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <video class="input_video"></video>
+            <canvas class="output_canvas" width="800px" height="450px"></canvas>
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}
+{% block additional_body %}
+    <script type="module">
+        const videoElement = document.getElementsByClassName('input_video')[0];
+        const canvasElement = document.getElementsByClassName('output_canvas')[0];
+        const canvasCtx = canvasElement.getContext('2d');
+
+        function onResults(results) {
+            canvasCtx.save();
+            canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+            canvasCtx.drawImage(results.segmentationMask, 0, 0, canvasElement.width, canvasElement.height);
+
+            // Only overwrite existing pixels.
+            canvasCtx.globalCompositeOperation = 'source-in';
+            canvasCtx.fillStyle = '#00DD00';
+            canvasCtx.fillRect(0, 0, canvasElement.width, canvasElement.height);
+
+            // Only overwrite missing pixels.
+            canvasCtx.globalCompositeOperation = 'destination-atop';
+            canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+
+            canvasCtx.globalCompositeOperation = 'source-over';
+            drawConnectors(canvasCtx, results.poseLandmarks, POSE_CONNECTIONS,
+                            {color: '#0000FF', lineWidth: 4});
+            drawLandmarks(canvasCtx, results.poseLandmarks,
+                            {color: '#FF0000', lineWidth: 2});
+            drawConnectors(canvasCtx, results.faceLandmarks, FACEMESH_TESSELATION,
+                            {color: '#D0D0D0', lineWidth: 1});
+            drawConnectors(canvasCtx, results.leftHandLandmarks, HAND_CONNECTIONS,
+                            {color: '#909000', lineWidth: 4});
+            drawLandmarks(canvasCtx, results.leftHandLandmarks,
+                            {color: '#CC0000', lineWidth: 2});
+            drawConnectors(canvasCtx, results.rightHandLandmarks, HAND_CONNECTIONS,
+                            {color: '#009090', lineWidth: 4});
+            drawLandmarks(canvasCtx, results.rightHandLandmarks,
+                            {color: '#0000CC', lineWidth: 2});
+            canvasCtx.restore();
+        }
+
+        const holistic = new Holistic({locateFile: (file) => {
+            return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
+        }});
+        holistic.setOptions({
+            modelComplexity: 1,
+            smoothLandmarks: true,
+            enableSegmentation: true,
+            smoothSegmentation: true,
+            refineFaceLandmarks: true,
+            minDetectionConfidence: 0.5,
+            minTrackingConfidence: 0.5
+        });
+        holistic.onResults(onResults);
+
+        const camera = new Camera(videoElement, {
+        onFrame: async () => {
+            await holistic.send({image: videoElement});
+            },
+            width: 480,
+            height: 270
+        });
+        camera.start();
+    </script>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block subtitle %}
+    <strong>OpenCV 얼굴 인식</strong>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 mt-2">
+            <img src="{{url_for('extra_bp.face_video_feed')}}" width="100%">
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}
