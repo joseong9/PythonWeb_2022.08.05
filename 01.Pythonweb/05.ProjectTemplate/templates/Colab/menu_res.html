@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}결과 화면{% endblock %}
+{% block additional_head %}
+    <style>
+        td { text-align: center; }
+    </style>
+{% endblock %}
+{% block subtitle %}
+    <strong>메뉴(결과 화면)</strong>
+{% endblock %}
+{% block content %}
+    <table class="table table-borderless">
+        <tr class="d-flex">
+            <td class="col-2">이미지</td>
+            <td class="col-8">
+                <img src="{{url_for('static', filename='upload/'+fname, q=mtime)}}" 
+                     class="d-block w-100" alt="입력한 사진">                         
+            </td>
+            <td class="col-2"></td>
+        </tr class="d-flex">
+        <tr class="d-flex">
+            <td class="col-2 mt-1 mb-1">레이블</td>
+            <td class="col-8 mt-1 mb-1" style="background-color: beige;">
+                <strong>{{result}}</strong>                             
+            </td>
+            <td class="col-2"></td>
+        </tr class="d-flex">
+        <tr class="d-flex">
+            <td class="col-2"></td>
+            <td class="col-8">
+                <button class="btn btn-primary" onclick="location.href='/menu'">재실행</button>
+            </td>
+            <td class="col-2"></td>
+        </tr>
+    </table>
+{% endblock %}
