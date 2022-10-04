@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}지도 표시{% endblock %}
+{% block additional_head %}
+    <style>
+        td { text-align: center; }
+    </style>
+{% endblock %}
+{% block subtitle %}
+    <strong>광주광역시내 주요기관</strong>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="d-block w-100">
+                <iframe src="{{url_for('static', filename='img/광주시_주요관공서.html', q=mtime)}}" 
+                        frameborder="1" width="800" height="500"></iframe>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}
